@@ -84,6 +84,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 onMarkerdataClick(markerData)
             }
         })
+
         rvMarkers.adapter = markerAdapter
 
     }
@@ -197,7 +198,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         var username = username
         val database = FirebaseDatabase.getInstance()
         val markersRef = database.getReference("markers")
-        username = username.lowercase(Locale.getDefault())
         markersRef.orderByChild("name").startAt(username).endAt(username + "\uf8ff")
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
