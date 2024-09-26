@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:backgroundTintMode="@color/white">
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="Tìm kiếm người dùng..." />
+
+    <fragment
+        android:id="@+id/id_Map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchView"/>
+    <Button
+        android:layout_margin="20dp"
+        android:id="@+id/btNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_alignParentEnd="true"
+        android:text="Note"
+        android:background="@drawable/button_custuom"
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMarkers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/btNote"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:layout_below="@id/searchView"/>
+
+</RelativeLayout>
